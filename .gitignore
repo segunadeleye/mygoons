@@ -11,3 +11,8 @@
 /log/*
 !/log/.keep
 /tmp
+
+# ignore all databases credentials
+/config/database.yml
+/config/environments/*
+
