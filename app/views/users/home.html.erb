@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+  <p>
+  <%= current_user["name"] %>
+  </p>
+  <p>
+  <%= current_user["email"] %>
+  </p>
+  <p>
+  <%= current_user["active"] %>
+  </p>
+
+  <%= current_user.class %>
+<% end %>
