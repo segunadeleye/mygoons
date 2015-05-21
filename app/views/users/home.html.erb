@@ -1,13 +1,77 @@
 <% if user_signed_in? %>
-  <p>
-  <%= current_user["name"] %>
-  </p>
-  <p>
-  <%= current_user["email"] %>
-  </p>
-  <p>
-  <%= current_user["active"] %>
-  </p>
 
-  <%= current_user.class %>
+  <div class="row">
+    <div class="col-md-3">
+      <%= image_tag "http://placehold.it/320x150", class: "display-image" unless current_user.image %>
+      <%= image_tag current_user.image, class: "display-image" if current_user.image %>
+    </div>
+    <div class="col-md-2">
+      <p>
+        <%= current_user["name"] %>
+      </p>
+      <p>
+        <%= current_user["email"] %>
+      </p>
+      <p>
+        <%= link_to "Upload Profile Picture", "users/image" unless current_user.image %>
+        <%= link_to "Change Profile Picture", "users/image" if current_user.image %>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h3>Friends</h3>
+    <ul class="list-group">
+    <% current_user.friends.each do |friend| %>
+      <li class="list-group-item">
+        <%= friend.name %>
+        <ul>
+          <% friend.friends.each do |suggested_friend| %>
+            <% if suggested_friend != current_user and !(current_user.friends.include?(suggested_friend) or current_user.inverse_friends.include?(suggested_friend)) %>
+              <li class="list-group-item">
+                <%= suggested_friend.name %>
+                <%= button_to "Add friend", friend_requests_initiate_path(potential_friend_id: suggested_friend), remote: true, class: "btn btn-primary btn-xs add-friend" %>
+              </li>
+            <% end %>
+          <% end %>
+          <% friend.inverse_friends.each do |suggested_friend| %>
+            <% if suggested_friend != current_user and !(current_user.friends.include?(suggested_friend) or current_user.inverse_friends.include?(suggested_friend)) %>
+              <li class="list-group-item">
+                <%= suggested_friend.name %>
+                <%= button_to "Add friend", friend_requests_initiate_path(potential_friend_id: suggested_friend), remote: true, class: "btn btn-primary btn-xs add-friend" %>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+    <% current_user.inverse_friends.each do |friend| %>
+      <li class="list-group-item">
+        <%= friend.name %>
+        <ul>
+          <% friend.friends.each do |suggested_friend| %>
+            <% if suggested_friend != current_user and !(current_user.friends.include?(suggested_friend) or current_user.inverse_friends.include?(suggested_friend)) %>
+              <li class="list-group-item">
+                <%= suggested_friend.name %>
+                <%= button_to "Add friend", friend_requests_initiate_path(potential_friend_id: suggested_friend), remote: true, class: "btn btn-primary btn-xs add-friend" %>
+              </li>
+            <% end %>
+            
+          <% end %>
+          <% friend.inverse_friends.each do |suggested_friend| %>
+            <% if suggested_friend != current_user and !(current_user.friends.include?(suggested_friend) or current_user.inverse_friends.include?(suggested_friend)) %>
+              <li class="list-group-item">
+                <%= suggested_friend.name %>
+                <%= button_to "Add friend", friend_requests_initiate_path(potential_friend_id: suggested_friend), remote: true, class: "btn btn-primary btn-xs add-friend" %>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+  </div>
+
 <% end %>
