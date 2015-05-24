@@ -16,3 +16,6 @@
 /config/database.yml
 /config/environments/*
 
+# ignore all images uploaded images
+/app/assets/images/*
+
