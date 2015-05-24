@@ -1,0 +1,3 @@
+$('.deactivate').click(function() {
+  $(this).closest('td').html("<%= button_to 'Deactivate', users_activate_path(id: @user), remote: true, class: 'btn btn-danger btn-sm deactivate' %>");
+});

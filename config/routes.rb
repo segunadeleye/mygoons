@@ -1,8 +1,20 @@
 Rails.application.routes.draw do
+
+  get 'admins/home'
+
+  post 'friend_requests/initiate'
+  post 'friend_requests/accept'
+  get 'friend_requests/all'
+
   get 'users/home'
+  get 'users/image'
+  post 'users/upload'
+  post 'users/activate'
+  post 'users/deactivate'
 
   devise_for :users
   devise_for :admins
+  resources :friendships
 
   root 'users#home'
   # The priority is based upon order of creation: first created -> highest priority.

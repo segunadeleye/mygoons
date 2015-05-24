@@ -1,0 +1,12 @@
+<% @friend_requests.each do |request| %>
+  <ul class="list-group">
+  <% if request.accepted == 0 %>
+    <li class="list-group-item">
+      <%= request.sender.name %>
+      (<%= request.sender.email %>)
+      <%= request.accepted %>
+      <%= button_to "Accept Request", friend_requests_accept_path(sender_id: request.sender), remote: true, class: "btn btn-primary btn-xs accept-request" %>
+    </li>
+  <% end %>
+  </ul>
+<% end %>

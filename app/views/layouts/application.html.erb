@@ -9,6 +9,12 @@
 <body>
 
 <%= render 'shared/navbar' %>
+<% if controller_name == "users" %>
+  <%= render 'shared/invite' %>
+<% end %>
+
+<p></p>
+
 
 <div class="container">
 <div class="row">
@@ -20,8 +26,8 @@
 <% end %>
 </div>
 <div class="row">
-<%= yield %>
-</div>
+  <%= yield %>
+</div> 
 </div>
 
 </body>
