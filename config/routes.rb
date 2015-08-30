@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   post 'friend_requests/accept'
   get 'friend_requests/all'
 
+  get 'mlms', to: 'mlms#index'
+
   get 'users/home'
   get 'users/image'
   post 'users/upload'

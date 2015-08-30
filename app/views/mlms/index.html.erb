@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DealDey - MLM</title>
+    <%= stylesheet_link_tag 'mlms' %>
+  </head>
+
+  <body>
+    <form id="myForm" action="#">
+      <header>Multi-Level Merchanting</header>
+      <div id="content">
+
+        <div class="form-group">
+          <label class="label-field" for="loginId">Total Generated Income (&#8358):</label>
+          <input type="text" name="income" id="income_id" class="form-content"> 
+          <label id="income_prompt"></label> 
+        </div>
+
+        <div class="form-group">
+          <label class="label-field" for="email">Total Commission (%):</label>
+          <input type="text" name="total_comm" id="total_comm_id" class="form-content" maxlength="5"> 
+          <label id="total_comm_prompt"></label>
+        </div>
+
+        <div class="form-group">
+          <label class="label-field" for="name">DD Commission (%):</label>
+          <input type="text" name="dd_comm" id="dd_comm_id" class="form-content"> 
+          <label id="dd_com_prompt"></label>
+        </div>
+
+        <div class="form-group">
+          <label class="label-field" for="name">1st Level Commission (%):</label>
+          <input type="text" name="level_one_comm" id="level_one_comm_id" class="form-content" maxlength="5"> 
+          <label id="level_one_comm_prompt"></label>
+        </div>
+
+        <div class="form-group">
+          <label class="label-field" for="name">2nd Level Commission (%):</label>
+          <input type="text" name="level_two_comm" id="level_two_comm_id" class="form-content" maxlength="5"> 
+          <label id="level_two_comm_prompt"></label>
+        </div>
+
+        <div class="form-group">
+          <label class="label-field" for="name">Other Levels Commission (%):</label>
+          <input type="text" name="other_comm" id="other_comm_id" class="form-content" maxlength="5"> 
+          <label id="other_comm_prompt"></label>
+        </div>
+
+        <div class="form-group">
+          <label class="label-field" for="name">Number of Other Levels:</label>
+          <input type="text" name="number_of_levels" id="number_of_levels_id" class="form-content"> 
+          <label id="number_of_levels_prompt"></label>
+        </div>
+
+        <div id="assigned"></div>
+        <div id="remain"></div>
+        <div id="result"></div>
+
+        <div id="button">
+          <input type="submit" value="Calculate" id="myBtn">
+        </div>
+
+        </div>
+      </div>
+    </form>     
+    <%= javascript_include_tag 'jquery-1.5.1' %>
+    <%= javascript_include_tag 'mlms' %>
+  </body>
+</html>

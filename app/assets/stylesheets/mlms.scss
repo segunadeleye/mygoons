@@ -1,0 +1,75 @@
+form{
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+}
+
+header{
+  background-color: #9AB368;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  padding: 5px 5px;
+}
+
+#content{
+  padding: 20px 50px;
+  background-color: #E8F2D7;
+}
+
+.form-group{
+  margin-top: 15px;
+  text-align: left;
+}
+
+.label-field{
+  font-size: 14px;
+  text-align: left;
+  font-weight: bold;
+}
+
+#receive {
+  width: 300px;
+  font-weight: bold;
+}
+
+#you {
+  font-size: 14px;
+}
+
+#your {
+  font-size: 14px;
+  text-align: center;
+}
+
+label {
+  display: inline-block; 
+  width: 200px;
+}
+
+input {
+}
+
+input[type="text"] {
+  width: 150px;
+}
+
+#button {
+  text-align: center;  
+}
+
+#myBtn {
+  background-color: #65763A;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 8px; 
+  height: 25px;
+  margin-top: 35px; 
+  margin-bottom: 25px;
+}
+
+
+textarea {
+  width: 450px;
+}
