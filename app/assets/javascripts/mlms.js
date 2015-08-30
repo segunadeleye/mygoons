@@ -55,8 +55,8 @@ Mlm.prototype.init = function() {
       self.percentageAssigned = (40/100)*self.percentageAssigned;
 
       self.percentageOverflow =  100 - self.percentageAssigned;
-      var htmlPercentAssigned = `<p style="color:green">Assigned: ${self.percentageAssigned}%</p>`;
-      var htmlPercentRemain = `<p style="color:olive">Overflow: ${self.percentageOverflow}% <sub>will be added to Deal Dey account</sub></p>`;
+      var htmlPercentAssigned = '<p style="color:green">Assigned: ' + self.percentageAssigned + '</p>';
+      var htmlPercentRemain = '<p style="color:olive">Overflow:' + self.percentageOverflow + '<sub>will be added to Deal Dey account</sub></p>';
       $('#assigned').html(htmlPercentAssigned);
       $('#remain').html(htmlPercentRemain);
     }
@@ -86,8 +86,8 @@ Mlm.prototype.init = function() {
       self.percentageAssigned = (100/40)*self.percentageAssigned;
 
       self.percentageOverflow =  100 - self.percentageAssigned;
-      var htmlPercentAssigned = `<p style="color:green">Assigned: ${self.percentageAssigned}%</p>`;
-      var htmlPercentRemain = `<p style="color:olive">Overflow: ${self.percentageOverflow}% <sub>will be added to Deal Dey account</sub></p>`;
+      var htmlPercentAssigned = '<p style="color:green">Assigned: ' + self.percentageAssigned + '%</p>';
+      var htmlPercentRemain = '<p style="color:olive">Overflow: '+ self.percentageOverflow + '% <sub>will be added to Deal Dey account</sub></p>';
       $('#assigned').html(htmlPercentAssigned);
       $('#remain').html(htmlPercentRemain);
     } 
@@ -121,8 +121,8 @@ Mlm.prototype.init = function() {
       self.percentageAssigned = (100/40)*self.percentageAssigned;
 
       self.percentageOverflow =  100 - self.percentageAssigned;
-      var htmlPercentAssigned = `<p style="color:green">Assigned: ${self.percentageAssigned}%</p>`;
-      var htmlPercentRemain = `<p style="color:olive">Overflow: ${self.percentageOverflow}% <sub>will be added to Deal Dey account</sub></p>`;
+      var htmlPercentAssigned = '<p style="color:green">Assigned: ' + self.percentageAssigned + '%</p>';
+      var htmlPercentRemain = '<p style="color:olive">Overflow: ' + self.percentageOverflow + '% <sub>will be added to Deal Dey account</sub></p>';
       $('#assigned').html(htmlPercentAssigned);
       $('#remain').html(htmlPercentRemain);
     }
@@ -157,8 +157,8 @@ Mlm.prototype.init = function() {
       self.percentageAssigned = (100/40)*self.percentageAssigned;
 
       self.percentageOverflow =  100 - self.percentageAssigned;
-      var htmlPercentAssigned = `<p style="color:green">Assigned: ${self.percentageAssigned}%</p>`;
-      var htmlPercentRemain = `<p style="color:olive">Overflow: ${self.percentageOverflow}% <sub>will be added to Deal Dey account</sub></p>`;
+      var htmlPercentAssigned = '<p style="color:green">Assigned: ' + self.percentageAssigned + '%</p>';
+      var htmlPercentRemain = '<p style="color:olive">Overflow: ' + self.percentageOverflow + '% <sub>will be added to Deal Dey account</sub></p>';
       $('#assigned').html(htmlPercentAssigned);
       $('#remain').html(htmlPercentRemain);
     }
@@ -191,18 +191,17 @@ Mlm.prototype.init = function() {
       var html = '';
       console.log(html)
       $('#result').html(html);
-      html += `<p>Total commission: &#8358 ${self.totalCommission}</p>`;
-      html += `<p>Deal Dey commission: &#8358 ${self.dealDeyCommission} <i style="color:olive">+ overflow of ${self.percentageOverflow}% (&#8358 ${self.overFlow}) = &#8358 ${self.total}</i></p>`;
-      html += `<p>Level 1 Merchant Commission: &#8358 ${self.level1Commission}</p>`;
-      html += `<p>Level 2 Merchant Commission: &#8358 ${self.level2Commission}</p>`;
-      html += `<p>Other Merchants: &#8358 ${self.otherLevelsCommission}</p>`;
-      html += `<p>Total Sum for Other Merchants: &#8358 ${self.totalOtherLevelsCommission} each</p>`;
-      console.log('gets here======')
+      html += '<p>Total commission: &#8358 ' + self.totalCommission + '</p>';
+      html += '<p>Deal Dey commission: &#8358 '+ self.dealDeyCommission + '<i style="color:olive">+ overflow of ' + self.percentageOverflow + '(&#8358 ' + self.overFlow + ') = &#8358 ' + self.total + '</i></p>';
+      html += '<p>Level 1 Merchant Commission: &#8358 ' + self.level1Commission + '</p>';
+      html += '<p>Level 2 Merchant Commission: &#8358 ' + self.level2Commission + '</p>';
+      html += '<p>Other Merchants: &#8358 ' + self.otherLevelsCommission + '</p>';
+      html += '<p>Total Sum for Other Merchants: &#8358 ' + self.totalOtherLevelsCommission + ' each</p>';
       $('#result').html(html);
     }
     else {
       var html = '';
-      html += `<p style="color:red">*incorrect or empty field(s)`;
+      html += '<p style="color:red">*incorrect or empty field(s)';
       $('#result').html(html);
     }
   });
